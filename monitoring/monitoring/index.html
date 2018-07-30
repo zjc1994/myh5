@@ -1,0 +1,132 @@
+<!doctype html>
+<html class="h100">
+<head>
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no">
+<meta content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+<title>数据监测</title>
+<link rel="stylesheet" href="css/main.css">
+<script src="https://scdn.wemediacn.com/we/recruit/yun/comm/jquery.js"></script>
+<script src="js/frame.js"></script>
+<script src="js/alluse.js"></script>
+</head>
+<body class="h100">
+    <div class="top">
+        <div class="name">
+            项目数据监控
+        </div>
+        <div class="time">
+        </div>
+    </div>
+    <table class="data_table">
+        <thead class="data_thead">
+            <tr class="a">
+                <th>品牌</th>
+                <th>项目</th>
+                <th>1小时</th>
+                <th>3小时</th>
+                <th>6小时</th>
+                <th>当天</th>
+            </tr>
+        </thead>
+        <tbody class="data_tbody">
+            
+        </tbody>
+    </table>
+</body>
+<script>
+    /* 假代码测试页面 */
+    res={
+        "time":"2018-7-24 11:00:00",
+        "date":[
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"}
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"},
+            {'brand':'兰芝','project':"预注册","one_hour":'100',"three_hour":"200","six_hour":"300","today":"500"}
+        ]
+    }
+    $(function(){
+        loadinit(res)
+    })
+    /* 真代码 */
+    function loadinit(res){
+        var str='';
+        $(".time").html('数据刷新时间'+res.time);
+        for(var i=0;i<res["date"].length;i++){
+            str+='<tr><td>'+res["date"][i].brand+'</td><td>'+res["date"][i].project+'</td><td>'+res["date"][i].one_hour+'</td><td>'+res["date"][i].three_hour+'</td><td>'+res["date"][i].six_hour+'</td><td>'+res["date"][i].today+'</td></tr>'
+        }
+        $(".data_tbody").html(str)
+        page();
+        /*每隔10分钟刷新页面*/
+        var reload=setTimeout(function(){
+            window.location.reload();
+            clearTimeout(reload);
+        },600000)
+    }
+    /* 分页（每三秒切换下一页）*/
+    function page(){
+        var h=document.documentElement.clientHeight;
+        var table_top=$(".data_table").offset().top;
+        var thead_top=$(".data_thead").offset().top;
+        var count=0
+        var timer=setInterval(function(){
+            var flag=true;
+            var arr=[];
+            var arr1=[];
+            for(var i=0;i<$(".data_tbody").find("tr").length;i++){
+                if($(".data_tbody").find("tr").eq(i).offset().top+$(".data_tbody").find("tr").eq(i).height()>=h){
+                    arr.push(i)
+                    flag=false;
+                    count=1;
+                }else{
+                    arr1.push(i)
+                    flag=true;
+                }
+            }
+            if(count==0){
+                clearInterval(timer)
+            }else{
+                for(var i=0;i<arr.length;i++){
+                    $(".data_tbody").find("tr").eq(i).fadeIn();
+                }
+                for(var i=0;i<arr1.length;i++){
+                    $(".data_tbody").find("tr").eq(i).fadeOut();
+                }
+            }
+            if(flag){
+                $(".data_tbody").find("tr").fadeIn()
+            }
+        },2000)
+    }
+</script>
+</html>

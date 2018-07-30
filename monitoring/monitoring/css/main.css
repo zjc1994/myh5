@@ -1,0 +1,8 @@
+body{min-width: 320px;padding: 0em 2%;box-sizing: border-box;overflow: hidden;}
+.top{margin-bottom: 0.5em;margin-top: 0.3em;box-sizing: border-box}
+.name{width: auto;font-size: 0.3em;font-weight: bold}
+.time{width: auto;font-size: 0.3em;float: right;font-weight: bold}
+table{width: 100%;font-size: 0.5em;border-collapse:collapse;overflow: hidden}
+th{background: #e5e5e5}
+table,td,th{border:1px solid #9a9a9a;text-align: center}
+th,td{line-height: 1.8em}
